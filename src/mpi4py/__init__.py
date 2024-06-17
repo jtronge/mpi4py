@@ -157,8 +157,11 @@ def profile(name, *, path=None):
         for pth in path:
             for (lib, dso) in pattern:
                 filename = os.path.join(pth, lib + name + dso)
+                print('trying file', filename)
                 if os.path.isfile(filename):
-                    return os.path.abspath(filename)
+                    lib = os.path.abspath(filename)
+                    print('loading', lib)
+                    return lib
         return None
 
     if path is None:

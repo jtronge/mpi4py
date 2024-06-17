@@ -331,7 +331,7 @@ class Config:
                     PATH = path + os.path.pathsep + PATH
                     compiler_info[name] = exe
                 else:
-                    self.log.warning("warning: %s='%s' not found", name, cmd)
+                    self.log.warn("warning: %s='%s' not found", name, cmd)
         #
         if not self and not compiler_info:
             for name, candidates in COMPILERS:
